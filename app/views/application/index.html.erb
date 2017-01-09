@@ -1,0 +1,13 @@
+
+<h2>Choose a text file to process</h2>
+
+<div>
+<%= form_tag({action: :upload}, multipart: true) do %>
+  <%= file_field_tag 'text_file' %>
+  <br />
+  <br />
+
+  <%= submit_tag('Eliminate Duplicates') %>
+<% end %>
+</div>
+

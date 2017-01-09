@@ -1,0 +1,11 @@
+
+<h3>Results</h3>
+<ul>
+  <li>Processing time: <%= "%0.3f" % @processing_time %> seconds</li>
+  <li>Source Array has <%= @source_array.length %> items</li>
+  <li>Source Array has <%= @source_array.uniq.length %> unique items</li>
+  <li>Deduped Array has <%= @deduped_array.length %> items</li>
+  <li>Deduped Array has <%= @deduped_array.uniq.length %> unique items</li>
+</ul>
+
+<%= link_to("Try Again", "/") %>
