@@ -28,5 +28,6 @@ module RemoveDuplicates
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     #config.active_record.raise_in_transactional_callbacks = true
+    config.secret_token = 'de0afcfcdbf5e7f0881c6b7eb1cdfed900b42054a59a33c1dbb4f0685928e23d37c90187e942c9f94efaac79e0e8e1cc07d5ead233655bc1f44d4476169d6ac4'
   end
 end
