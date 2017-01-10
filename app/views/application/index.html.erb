@@ -1,13 +1,31 @@
 
-<h2>Choose a text file to process</h2>
+<div style="margin: 0 10px">
 
-<div>
-<%= form_tag({action: :upload}, multipart: true) do %>
-  <%= file_field_tag 'text_file' %>
-  <br />
-  <br />
+  <h2>Choose a text file to process</h2>
 
-  <%= submit_tag('Eliminate Duplicates') %>
-<% end %>
+
+  <%= form_tag({action: :upload}, multipart: true) do %>
+    <label class="btn btn-default btn-file">
+      Browse <input type="file" name="text_file" id="text_file" style="display: none;">
+    </label>
+
+    <div id="selectedFilename" style="margin: 10px 0 20px 10px"></div>
+
+    <br />
+    <br />
+
+    <%= submit_tag('Eliminate Duplicates') %>
+  <% end %>
+
 </div>
+
+<script type="text/javascript">
+  $(document).on('change', ':file', function() {
+    var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    $('#selectedFilename').text(label);
+  });
+
+</script>
 
